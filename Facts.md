@@ -1,12 +1,10 @@
 # Some Important questions discovered in ML
----
 ## Why L1 loss preferred for sparse models?
 
 > With a sparse model, we think of a model where many of the weights are 0. Let us therefore reason about how L1-regularization is more likely to create 0-weights.
 Note that L2-regularization can make a weight reach zero if the step size ηη is so high that it reaches zero in a single step. Even if L2-regularization on its own over or undershoots 0, it can still reach a weight of 0 when used together with an objective function that tries to minimize the error of the model with respect to the weights. In that case, finding the best weights of the model is a trade-off between regularizing (having small weights) and minimizing loss (fitting the training data), and the result of that trade-off can be that the best value for some weights are 0.
 
 ## Various loss function for regression problems?
---- 
 - Mean square error/L2
 - Mean absolute error/L1
 - Mean absolute Percentage error
@@ -14,13 +12,11 @@ Note that L2-regularization can make a weight reach zero if the step size ηη i
 - Log cosh loss 
  
 ## Loss for classification?
----
 - Hinge loss
 - Log loss
 - Exponential loss
 
 ## Compare L1 and L2 loss?
----
 - In short, using the squared error is easier to solve, but using the absolute error is more robust to outliers.
 - Gradient of L1 loss is same throughout.Even for smaller loss gradient is high.However it can be fixed by dynamic learning rate
  
@@ -35,7 +31,6 @@ Note that L2-regularization can make a weight reach zero if the step size ηη i
 On the other hand Bias is like the intercept added in a linear equation. It is an additional parameter in the Neural Network which is used to adjust the output along with the weighted sum of the inputs to the neuron. Therefore Bias is a constant which helps the model in a way that it can fit best for the given data.
 
 ## Different activation function with formulas and their limitations?
----
 #### Sigmoid Function
 >f(x) = 1 / 1 + exp(-x) 
 
@@ -63,7 +58,6 @@ Rectifies vanishing gradient problem.
 These problems were solved by leaky relu function.
 
 ## Xgboost characteristics and tuning params(generally tuned)
----
 XGBoost is one of the fastest implementations of gradient boosted trees.
 It does this by tackling one of the major inefficiencies of gradient boosted trees: considering the potential loss for all possible splits to create a new branch (especially if you consider the case where there are thousands of features, and therefore thousands of possible splits). XGBoost tackles this inefficiency by looking at the distribution of features across all data points in a leaf and using this information to reduce the search space of possible feature splits.
 The params that can be tuned are:
@@ -73,7 +67,6 @@ The params that can be tuned are:
 - Reg_alpha, reg_lambda
 
 ## Define 4 plot and its significance:
----
 Some basic plot for any ml model to check:
 - **Lag plot:** for randomness
 - **Run sequence plot:** to check fixed location of values
@@ -89,7 +82,7 @@ Some basic plot for any ml model to check:
 If all 4 of the assumptions hold, then the process is "statistically in control". In practice, many processes fall short of achieving this ideal.
 
 ## Some visualization plots for different dimensional data:
----
+
 ### 1-D data
 	1. bar plot: count and frequency
 	2. box plot: descriptive statistics
@@ -110,12 +103,12 @@ If all 4 of the assumptions hold, then the process is "statistically in control"
 	7.joint pot
 
 ## Distinguishing feature for vanishing/exploding gradient problems
----
+
 A good standard deviation for the activations is on the order of 0.5 to 2.0. Significantly outside of this range may indicate vanishing or exploding activations.
 
 
 ## Types of anomaly detection
----
+
 Anomalies or outliers come in three types.
 - **Point Anomalies:** If an individual data instance can be considered as anomalous with respect to the rest of the data (e.g. purchase with large transaction value)
 - **Contextual Anomalies:** If a data instance is anomalous in a specific context, but not otherwise ( anomaly if occur at a certain time or a certain region. e.g. large spike at the middle of the night)
@@ -127,7 +120,7 @@ Anomalies or outliers come in three types.
 
  
 ## Causes of outlier
----
+
 - Data entry errors (human errors)
 - Measurement errors (instrument errors)
 - Experimental errors (data extraction or experiment planning/executing errors)
@@ -137,7 +130,7 @@ Anomalies or outliers come in three types.
 - Natural (not an error, novelties in data)
 
 ## Methods for outlier detection?
----
+
 - Z-Score or Extreme Value Analysis (parametric)
 - Probabilistic and Statistical Modeling (parametric)
 - Linear Regression Models (PCA, LMS)
